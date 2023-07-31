@@ -27,6 +27,23 @@
     "operator-linebreak": 0,
     "implicit-arrow-linebreak": 0,
     "function-paren-newline": 0,
-    "object-curly-newline": 0
-  }
+    "object-curly-newline": 0,
+    "react/jsx-props-no-spreading": 0
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.{ts,tsx}", "**/jest.setup.{js,jsx,ts,tsx}"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off",
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true,
+            "peerDependencies": true,
+            "optionalDependencies": false
+          }
+        ]
+      }
+    }
+  ]
 }

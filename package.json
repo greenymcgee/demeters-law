@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:tsc": "tsc",
     "start": "next start",
     "lint": "next lint",
     "test": "jest --coverage --runInBand",
     "test:watch": "jest --watch",
-    "test:clear": "jest --clearCache"
+    "test:clear": "jest --clearCache",
+    "validate": "npm run build:tsc && npm run lint && npm run test"
   },
   "dependencies": {
     "@next/font": "13.1.6",

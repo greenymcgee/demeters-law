@@ -9,7 +9,10 @@ module.exports = {
   setupFilesAfterEnv: ['./jest.setup.ts'],
   moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
   watchPathIgnorePatterns: ['node_modules'],
-  collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx,ts,tsx}',
+    '!src/pages/api/**/*.(ts|tsx)',
+  ],
   coverageReporters: ['lcov', 'text', 'text-summary', 'html'],
   coverageThreshold: {
     global: {
