@@ -18,4 +18,14 @@ type PropsOf<Component extends (...args: any) => any> =
 
 type OneOf<AnyArray extends Array<unknown>> = AnyArray[0]
 
+type AnyFunc = (...args: any) => any
+
+type AnyConstructor = new (...args: any) => any
+
+type Definitely<T> = T extends AnyConstructor
+  ? InstanceType<T>
+  : T extends AnyFunc
+  ? ReturnType<T>
+  : never
+
 /* eslint-enable @typescript-eslint/no-explicit-any */
