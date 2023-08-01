@@ -8,10 +8,11 @@
     "build:tsc": "tsc",
     "start": "next start",
     "lint": "next lint",
+    "spellcheck": "cspell \"src/**/*.*\" --no-progress",
     "test": "jest --coverage --runInBand",
     "test:watch": "jest --watch",
     "test:clear": "jest --clearCache",
-    "validate": "npm run build:tsc && npm run lint && npm run test"
+    "validate": "npm run spellcheck && npm run build:tsc && npm run lint && npm run test"
   },
   "dependencies": {
     "@next/font": "13.1.6",
@@ -30,6 +31,7 @@
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.50.0",
+    "cspell": "^6.31.2",
     "eslint": "^8.33.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^13.1.6",
