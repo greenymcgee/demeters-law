@@ -1,20 +1,19 @@
 import mockAxios from 'jest-mock-axios'
 import { act, renderHook, waitFor } from '@testing-library/react'
-import { AxiosErrorFacade, PostsDataFacade } from '@/facades'
+import { AxiosErrorFacade } from '@/facades'
 import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
 import { AXIOS_ERROR } from '@/fixtures/axiosError'
-import { usePostsIndex } from '..'
-import { TestProviders } from '../../../jest.components'
+import { TestSWRConfig } from '../../../../../jest.components'
+import { usePosts } from '..'
+import { PostsDataFacade } from '../../facades'
 
 afterEach(() => {
   mockAxios.reset()
 })
 
-describe('usePostsIndex Tests', () => {
+describe('usePosts Tests', () => {
   it('should return the currentPosts when data is present', async () => {
-    const { result } = renderHook(() => usePostsIndex(), {
-      wrapper: TestProviders,
-    })
+    const { result } = renderHook(() => usePosts(), { wrapper: TestSWRConfig })
     expect(result.current.currentPosts).toEqual([])
     expect(result.current.isLoading).toEqual(true)
     act(() => {
@@ -29,9 +28,7 @@ describe('usePostsIndex Tests', () => {
   })
 
   it('should return the errorMessage upon failure', async () => {
-    const { result } = renderHook(() => usePostsIndex(), {
-      wrapper: TestProviders,
-    })
+    const { result } = renderHook(() => usePosts(), { wrapper: TestSWRConfig })
     act(() => {
       const request = mockAxios.getReqByMatchUrl(/posts/)
       mockAxios.mockError(AXIOS_ERROR, request)

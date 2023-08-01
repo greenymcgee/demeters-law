@@ -1,6 +1,5 @@
 import React from 'react'
-import { PostRecord } from '@/types/posts'
-import { PostsProps } from './types'
+import { PostRecord, UsePosts } from './types'
 
 function renderPost(post: PostRecord) {
   return <li key={post.id}>{post.title}</li>
@@ -8,6 +7,6 @@ function renderPost(post: PostRecord) {
 
 export function PostsList({
   currentPosts,
-}: Pick<PostsProps, 'currentPosts'>): JSX.Element {
+}: Pick<UsePosts, 'currentPosts'>): JSX.Element {
   return <ul data-testid="posts-list">{currentPosts.map(renderPost)}</ul>
 }
