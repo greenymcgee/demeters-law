@@ -29,8 +29,8 @@ jobs:
       - name: Dependencies Audit
         run: npm audit --omit=dev --audit-level=high
 
-      # - name: Spellcheck
-      #   run: npm run spellcheck
+      - name: Spellcheck
+        run: npm run spellcheck
 
       - name: Build
         run: npm run build
