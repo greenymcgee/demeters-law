@@ -1,6 +1,6 @@
-import { GetPostsResponse, PostRecord } from '@/types/posts'
 import { delegateArray, delegateObject } from '@/utils'
 import { SWRResponse } from 'swr'
+import { GetPostsResponse, PostRecord } from '../types'
 
 export class PostsDataFacade {
   private data: GetPostsResponse
