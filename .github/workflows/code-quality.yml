@@ -1,0 +1,42 @@
+name: Code Quality
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  code-quality:
+    name: Code Quality
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install node@16
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Dependencies Audit
+        run: npm audit --omit=dev --audit-level=high
+
+      # - name: Spellcheck
+      #   run: npm run spellcheck
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm run test
