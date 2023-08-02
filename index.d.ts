@@ -28,4 +28,6 @@ type Definitely<T> = T extends AnyConstructor
   ? ReturnType<T>
   : never
 
+type AnyObject = Record<string, any>
+
 /* eslint-enable @typescript-eslint/no-explicit-any */
