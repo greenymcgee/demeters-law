@@ -1,26 +1,7 @@
+import { WHITESPACE_PATTERN, WORDS_PATTERN } from '@/constants'
 import { isPlainObject } from './is'
 
-type RemoveUnderscoreFirstLetter<S extends string> =
-  S extends `${infer FirstLetter}${infer U}`
-    ? `${FirstLetter extends '_' ? U : `${FirstLetter}${U}`}`
-    : S
-
-type CamelToSnakeCase<S extends string> = S extends `${infer T}${infer U}`
-  ? `${T extends Capitalize<T> ? '_' : ''}${RemoveUnderscoreFirstLetter<
-      Lowercase<T>
-    >}${CamelToSnakeCase<U>}`
-  : S
-
-type KeysToSnakeCase<T> = {
-  [K in keyof T as CamelToSnakeCase<string & K>]: T[K] extends AnyObject
-    ? KeysToSnakeCase<T[K]>
-    : T[K]
-}
-
-const WHITESPACE_PATTERN = /\s+/g
-const WORDS_PATTERN =
-  /(?:(^[^a-zA-Z0-9]+|[^a-zA-Z0-9]+$)|([A-Z][A-Z][a-z0-9])|([a-z0-9][A-Z]|[0-9][a-z])|([a-z0-9][^a-zA-Z0-9]+))/g
-
+// TODO: separate all this out into separate files. Too messy in here still
 function separateByTwoCapitalLetters(searchValue: string): string {
   const lastLetterOfWord = searchValue[0]
   const firstLetterOfNextWord = searchValue[1]
