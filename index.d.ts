@@ -28,4 +28,28 @@ type Definitely<T> = T extends AnyConstructor
   ? ReturnType<T>
   : never
 
+type AnyObject = Record<string, any>
+
+/**
+ * See this gist for KeysToSnakeCase:
+ * https://gist.github.com/kuroski/9a7ae8e5e5c9e22985364d1ddbf3389d
+ */
+type RemoveUnderscoreFirstLetter<S extends string> =
+  S extends `${infer FirstLetter}${infer Underscore}`
+    ? `${FirstLetter extends '_' ? Underscore : `${FirstLetter}${Underscore}`}`
+    : S
+
+type CamelToSnakeCase<S extends string> =
+  S extends `${infer T}${infer Underscore}`
+    ? `${T extends Capitalize<T> ? '_' : ''}${RemoveUnderscoreFirstLetter<
+        Lowercase<T>
+      >}${CamelToSnakeCase<Underscore>}`
+    : S
+
+type KeysToSnakeCase<Obj> = {
+  [Key in keyof Obj as CamelToSnakeCase<
+    string & Key
+  >]: Obj[Key] extends AnyObject ? KeysToSnakeCase<Obj[Key]> : Obj[Key]
+}
+
 /* eslint-enable @typescript-eslint/no-explicit-any */

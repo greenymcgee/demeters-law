@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react'
+import { ClientSide } from './root'
 
 export const metadata = {
   title: "Demeter's Law",
@@ -9,6 +10,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
+        <ClientSide />
         {/* TODO: get TW */}
         <div style={{ margin: '0 auto', maxWidth: 1440, padding: '0 0.75rem' }}>
           {children}
