@@ -1,6 +1,6 @@
 import { AXIOS_RESPONSE } from '@/fixtures'
 import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
-import { camelCaseKeys, snakeCaseKeys } from '@/utils/caseFormats'
+import { camelCaseKeys, snakeCaseKeys } from '@/utils'
 import { camelCaseResponseDataKeys } from '../utils'
 
 describe('camelCaseResponseDataKeys', () => {

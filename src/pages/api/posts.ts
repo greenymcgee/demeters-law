@@ -1,5 +1,5 @@
 import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
-import { snakeCaseKeys } from '@/utils/caseFormats'
+import { snakeCaseKeys } from '@/utils'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export default function controller(

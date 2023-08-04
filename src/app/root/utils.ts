@@ -1,5 +1,4 @@
-import { isArray } from '@/utils'
-import { camelCaseKeys } from '@/utils/caseFormats'
+import { camelCaseKeys, isArray } from '@/utils'
 import { AxiosResponse } from 'axios'
 
 export function camelCaseResponseDataKeys(
