@@ -1,4 +1,4 @@
-import { AxiosErrorFacade } from '@/facades'
+import { AxiosErrorFacade } from '@/common/facades'
 import { AxiosError } from 'axios'
 import { SWRResponse } from 'swr'
 

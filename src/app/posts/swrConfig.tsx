@@ -1,6 +1,6 @@
 'use client'
 
-import { INTERNAL_API_ROUTES } from '@/constants'
+import { INTERNAL_API_ROUTES } from '@/common/constants'
 import React, { PropsWithChildren } from 'react'
 import { SWRConfig } from 'swr'
 import { PostsSWRConfigProps } from './types'

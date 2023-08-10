@@ -1,5 +1,5 @@
-import { INTERNAL_API_ROUTES } from '@/constants'
-import { apis } from '@/utils'
+import { INTERNAL_API_ROUTES } from '@/common/constants'
+import { apis } from '@/common/utils'
 import { GetPostsResponse } from './types'
 
 export async function fetchFallbackPosts(): Promise<

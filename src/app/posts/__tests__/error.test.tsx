@@ -1,4 +1,4 @@
-import { INTERNAL_API_ROUTES } from '@/constants'
+import { INTERNAL_API_ROUTES } from '@/common/constants'
 import React from 'react'
 import mockAxios from 'jest-mock-axios'
 import { act, fireEvent, render, screen } from '@testing-library/react'
