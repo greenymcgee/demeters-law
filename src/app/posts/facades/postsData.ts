@@ -1,4 +1,4 @@
-import { delegateArray, delegateObject } from '@/utils'
+import { delegateArray, delegateObject } from '@/common/utils'
 import { SWRResponse } from 'swr'
 import { GetPostsResponse, PostRecord } from '../types'
 

@@ -1,4 +1,4 @@
-import { WHITESPACE_PATTERN, WORDS_PATTERN } from '@/constants'
+import { WHITESPACE_PATTERN, WORDS_PATTERN } from '@/common/constants'
 
 function separateByTwoCapitalLetters(searchValue: string): string {
   const lastLetterOfWord = searchValue[0]

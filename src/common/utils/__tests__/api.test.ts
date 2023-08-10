@@ -7,8 +7,8 @@ import {
   camelCaseResponseDataKeys,
   createApis,
   snakeCaseKeys,
-} from '@/utils'
-import { INTERNAL_API_HOST } from '@/constants'
+} from '@/common/utils'
+import { INTERNAL_API_HOST } from '@/common/constants'
 
 describe('api utils', () => {
   describe('camelCaseResponseDataKeys', () => {

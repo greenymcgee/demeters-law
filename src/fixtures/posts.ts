@@ -1,5 +1,5 @@
 import { GetPostsResponse, PostRecord } from '@/app/posts/types'
-import { getDaysFromNow } from '@/utils'
+import { getDaysFromNow } from '@/common/utils'
 
 export const EXPIRED_POST_1: PostRecord = {
   createdAt: '1-1-1999',
