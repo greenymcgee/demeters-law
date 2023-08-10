@@ -1,7 +1,7 @@
 import {
   GET_POSTS_RESPONSE,
   GET_POSTS_RESPONSE_WITHOUT_POSTS,
-} from '@/fixtures/posts'
+} from '../../../../../fixtures'
 import { PostsDataFacade } from '..'
 
 describe('PostsDataFacade Tests', () => {

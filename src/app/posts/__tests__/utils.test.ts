@@ -1,8 +1,7 @@
-import { AXIOS_ERROR } from '@/fixtures/axiosError'
 import { INTERNAL_API_ROUTES } from '@/common/constants'
-import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
 import mockAxios from 'jest-mock-axios'
 import { fetchFallbackPosts } from '../utils'
+import { AXIOS_ERROR, GET_POSTS_RESPONSE } from '../../../../fixtures'
 
 afterEach(() => {
   mockAxios.reset()

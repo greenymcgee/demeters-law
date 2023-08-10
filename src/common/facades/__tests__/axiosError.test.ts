@@ -2,7 +2,7 @@ import {
   AXIOS_ERROR,
   AXIOS_ERROR_WITHOUT_RESPONSE,
   AXIOS_ERROR_WITHOUT_RESPONSE_MESSAGE,
-} from '@/fixtures/axiosError'
+} from '../../../../fixtures'
 import { AxiosErrorFacade } from '..'
 
 describe('AxiosErrorFacade', () => {

@@ -1,6 +1,4 @@
 import mockAxios from 'jest-mock-axios'
-import { AXIOS_RESPONSE } from '@/fixtures'
-import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
 import {
   apis,
   camelCaseKeys,
@@ -9,6 +7,7 @@ import {
   snakeCaseKeys,
 } from '@/common/utils'
 import { INTERNAL_API_HOST } from '@/common/constants'
+import { AXIOS_RESPONSE, GET_POSTS_RESPONSE } from '../../../../fixtures'
 
 describe('api utils', () => {
   describe('camelCaseResponseDataKeys', () => {
