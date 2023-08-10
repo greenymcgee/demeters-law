@@ -4,6 +4,8 @@ on:
   push:
     branches-ignore:
       - main
+env:
+  NEXT_PUBLIC_INTERNAL_API_HOST: ''
 
 defaults:
   run:
