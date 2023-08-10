@@ -14,23 +14,11 @@ on:
 
 jobs:
   cd-deploy-preview:
-    runs-on: unbuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Deploy Preview
-        uses: ./.github/workflows/preview.yml
-        with:
-          DestEnvironment: ${{ inputs.DestEnvironment }}
+    uses: ./.github/workflows/preview.yml
+    with:
+      DestEnvironment: ${{ inputs.DestEnvironment }}
 
   cd-deploy-prod:
-    runs-on: unbuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
-      - name: Deploy Production
-        uses: ./.github/workflows/production.yml
-        with:
-          DestEnvironment: ${{ inputs.DestEnvironment }}
+    uses: ./.github/workflows/production.yml
+    with:
+      DestEnvironment: ${{ inputs.DestEnvironment }}
