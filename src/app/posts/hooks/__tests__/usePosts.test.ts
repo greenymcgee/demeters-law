@@ -1,3 +1,4 @@
+import { INTERNAL_API_ROUTES } from '@/constants'
 import mockAxios from 'jest-mock-axios'
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { AxiosErrorFacade } from '@/facades'
@@ -17,7 +18,9 @@ describe('usePosts Tests', () => {
     expect(result.current.currentPosts).toEqual([])
     expect(result.current.isLoading).toEqual(true)
     act(() => {
-      mockAxios.mockResponseFor('/api/posts', { data: GET_POSTS_RESPONSE })
+      mockAxios.mockResponseFor(INTERNAL_API_ROUTES.posts, {
+        data: GET_POSTS_RESPONSE,
+      })
     })
     await waitFor(() => expect(result.current.isLoading).toEqual(false))
     expect(result.current.data).toEqual(GET_POSTS_RESPONSE)

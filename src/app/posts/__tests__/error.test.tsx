@@ -1,3 +1,4 @@
+import { INTERNAL_API_ROUTES } from '@/constants'
 import React from 'react'
 import mockAxios from 'jest-mock-axios'
 import { act, fireEvent, render, screen } from '@testing-library/react'
@@ -9,6 +10,6 @@ describe('<PostsError /> Tests', () => {
     act(() => {
       fireEvent.click(screen.getByText('Try Again'))
     })
-    expect(mockAxios.get).toHaveBeenCalledWith('/api/posts')
+    expect(mockAxios.get).toHaveBeenCalledWith(INTERNAL_API_ROUTES.posts)
   })
 })

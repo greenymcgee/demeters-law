@@ -18,3 +18,7 @@ export interface UsePosts extends SWRResponse<GetPostsResponse, AxiosError> {
   currentPosts: PostRecord[]
   hasPosts: boolean
 }
+
+export interface PostsSWRConfigProps {
+  fallbackPosts: GetPostsResponse | undefined
+}

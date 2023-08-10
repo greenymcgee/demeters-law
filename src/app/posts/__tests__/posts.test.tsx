@@ -1,3 +1,4 @@
+import { INTERNAL_API_ROUTES } from '@/constants'
 import React from 'react'
 import mockAxios from 'jest-mock-axios'
 import {
@@ -34,7 +35,7 @@ describe('<Posts /> Tests', () => {
   it('should render default message if no posts are returned', async () => {
     render(<Posts />, { wrapper: TestSWRConfig })
     act(() =>
-      mockAxios.mockResponseFor('/api/posts', {
+      mockAxios.mockResponseFor(INTERNAL_API_ROUTES.posts, {
         data: GET_POSTS_RESPONSE_WITHOUT_POSTS,
       }),
     )
@@ -47,7 +48,9 @@ describe('<Posts /> Tests', () => {
   it('should render the currentPosts when given', async () => {
     render(<Posts />, { wrapper: TestSWRConfig })
     act(() =>
-      mockAxios.mockResponseFor('/api/posts', { data: GET_POSTS_RESPONSE }),
+      mockAxios.mockResponseFor(INTERNAL_API_ROUTES.posts, {
+        data: GET_POSTS_RESPONSE,
+      }),
     )
     await waitForElementToBeRemoved(screen.getByTestId('posts-loader'))
     expect(screen.queryByTestId('posts-error')).not.toBeInTheDocument()

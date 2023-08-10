@@ -3,7 +3,8 @@
     "next/core-web-vitals",
     "airbnb",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
@@ -29,7 +30,8 @@
     "function-paren-newline": 0,
     "object-curly-newline": 0,
     "react/jsx-props-no-spreading": 0,
-    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }],
+    "react/require-default-props": 0
   },
   "overrides": [
     {
