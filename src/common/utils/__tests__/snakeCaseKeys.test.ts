@@ -1,4 +1,4 @@
-import { CAMEL_CASED, SNAKE_CASED } from '@/fixtures'
+import { CAMEL_CASED, SNAKE_CASED } from '../../../../fixtures'
 import { snakeCaseKeys } from '..'
 
 describe('snakeCaseKeys', () => {

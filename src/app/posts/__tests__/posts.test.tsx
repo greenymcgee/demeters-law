@@ -7,12 +7,12 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from '@testing-library/react'
-import { AXIOS_ERROR } from '@/fixtures/axiosError'
 import { TestSWRConfig } from '../../../../jest.components'
 import {
+  AXIOS_ERROR,
   GET_POSTS_RESPONSE,
   GET_POSTS_RESPONSE_WITHOUT_POSTS,
-} from '../../../fixtures/posts'
+} from '../../../../fixtures'
 import { Posts } from '../posts'
 
 afterEach(() => {

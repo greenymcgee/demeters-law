@@ -5,7 +5,7 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from '@testing-library/react'
-import { EXPIRED_POST_1, GET_POSTS_RESPONSE } from '@/fixtures/posts'
+import { EXPIRED_POST_1, GET_POSTS_RESPONSE } from '../../../../fixtures'
 import PostsPage from '../page'
 import { PostsDataFacade } from '../facades'
 

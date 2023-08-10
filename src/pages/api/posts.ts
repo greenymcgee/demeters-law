@@ -1,4 +1,4 @@
-import { GET_POSTS_RESPONSE } from '@/fixtures/posts'
+import { GET_POSTS_RESPONSE } from 'fixtures/posts'
 import { snakeCaseKeys } from '@/common/utils'
 import { NextApiRequest, NextApiResponse } from 'next'
 
