@@ -1,16 +1,19 @@
-import useSWR, { SWRConfiguration } from 'swr'
+import useSWR from 'swr'
+import { apis } from '@/utils'
 import { AxiosErrorFacade } from '@/facades'
-import axios from 'axios'
+import { INTERNAL_API_ROUTES } from '@/constants'
 import { useMemo } from 'react'
-import { UsePosts } from '../types'
+import { GetPostsResponse, UsePosts } from '../types'
 import { PostsDataFacade } from '../facades'
 
-async function fetchPosts(url: string) {
-  return axios.get(url).then((response) => response.data)
+const { internal } = apis
+
+async function fetchPosts(pathname: string): Promise<GetPostsResponse> {
+  return internal.get(pathname).then(({ data }) => data)
 }
 
-export function usePosts(config?: SWRConfiguration): UsePosts {
-  const query = useSWR('/api/posts', fetchPosts, config)
+export function usePosts(): UsePosts {
+  const query = useSWR(INTERNAL_API_ROUTES.posts, fetchPosts)
 
   const { currentPosts, hasPosts } = useMemo(
     () => new PostsDataFacade(query.data),

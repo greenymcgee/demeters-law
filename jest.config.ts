@@ -14,6 +14,7 @@ module.exports = {
     '!src/pages/api/**/*.(ts|tsx)',
     '!src/fixtures/**/*.(ts|tsx)',
     '!src/app/layout.tsx',
+    '!src/common/types/**/*.(ts|tsx)',
   ],
   coverageReporters: ['lcov', 'text', 'text-summary', 'html'],
   coverageThreshold: {

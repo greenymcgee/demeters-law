@@ -1,0 +1,1 @@
+export const INTERNAL_API_HOST = process.env.NEXT_PUBLIC_INTERNAL_API_HOST
