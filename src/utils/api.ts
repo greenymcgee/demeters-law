@@ -1,7 +1,8 @@
-import { camelCaseKeys, isArray } from '@/utils'
 import axios, { AxiosResponse } from 'axios'
 import { INTERNAL_API_HOST } from '@/constants'
 import { Apis } from '@/common/types'
+import { isArray } from './is'
+import { camelCaseKeys } from './camelCaseKeys'
 
 export function camelCaseResponseDataKeys(
   response: AxiosResponse,

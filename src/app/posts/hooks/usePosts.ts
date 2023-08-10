@@ -1,10 +1,10 @@
 import useSWR from 'swr'
+import { apis } from '@/utils'
 import { AxiosErrorFacade } from '@/facades'
 import { INTERNAL_API_ROUTES } from '@/constants'
 import { useMemo } from 'react'
 import { GetPostsResponse, UsePosts } from '../types'
 import { PostsDataFacade } from '../facades'
-import { apis } from '@/utils'
 
 const { internal } = apis
 
