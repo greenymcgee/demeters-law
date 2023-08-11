@@ -10,10 +10,12 @@ import {
 import { TestSWRConfig } from '../../../../jest.components'
 import {
   AXIOS_ERROR,
+  EXPIRED_POST_1,
   GET_POSTS_RESPONSE,
   GET_POSTS_RESPONSE_WITHOUT_POSTS,
 } from '../../../../fixtures'
 import { Posts } from '../posts'
+import { PostsDataFacade } from '../facades'
 
 afterEach(() => {
   mockAxios.reset()
@@ -56,5 +58,10 @@ describe('<Posts /> Tests', () => {
     expect(screen.queryByTestId('posts-error')).not.toBeInTheDocument()
     expect(screen.queryByTestId('posts-empty')).not.toBeInTheDocument()
     expect(screen.queryByTestId('posts-list')).toBeVisible()
+    expect(screen.queryByText(EXPIRED_POST_1.title)).not.toBeInTheDocument()
+    new PostsDataFacade(GET_POSTS_RESPONSE).currentPosts.forEach((post) => {
+      expect(screen.getByText(post.title)).toBeVisible()
+      expect(screen.getByAltText(post.title)).toBeVisible()
+    })
   })
 })
