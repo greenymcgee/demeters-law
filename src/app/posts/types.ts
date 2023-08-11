@@ -7,6 +7,7 @@ export interface PostRecord {
   expiresAt: string
   id: number
   title: string
+  imageId: string
 }
 
 export interface GetPostsResponse {
@@ -22,3 +23,5 @@ export interface UsePosts extends SWRResponse<GetPostsResponse, AxiosError> {
 export interface PostsSWRConfigProps {
   fallbackPosts: GetPostsResponse | undefined
 }
+
+export type PostsListProps = Pick<UsePosts, 'currentPosts'>
