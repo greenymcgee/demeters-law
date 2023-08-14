@@ -1,6 +1,5 @@
 import React from 'react'
-import { Posts } from './posts'
-import { PostsSWRConfig } from './swrConfig'
+import { Posts, PostsSWRConfig } from './components'
 import { fetchFallbackPosts } from './utils'
 
 export default async function PostsPage(): Promise<JSX.Element> {

@@ -1,13 +1,11 @@
 'use client'
 
 import React from 'react'
+import { usePosts } from '../hooks'
 import { PostsEmpty } from './empty'
-import { usePosts } from './hooks'
+import { PostsError } from './error'
 import { PostsList } from './list'
-// TODO: refactor to not have these default imports here
-// create a app/posts/components dir
-import PostsError from './error'
-import PostsLoader from './loading'
+import { PostsLoader } from './loader'
 
 export function Posts(): JSX.Element {
   // TODO: work with isValidating in PostsList

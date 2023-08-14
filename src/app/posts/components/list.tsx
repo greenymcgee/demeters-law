@@ -2,7 +2,7 @@
 
 import Image, { ImageLoaderProps } from 'next/image'
 import React from 'react'
-import { PostRecord, PostsListProps } from './types'
+import { PostRecord, PostsListProps } from '../types'
 
 function imageLoader({ src, width }: ImageLoaderProps): string {
   return `https://picsum.photos/id/${src}/${width}`

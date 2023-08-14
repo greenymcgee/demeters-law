@@ -3,7 +3,7 @@
 import { INTERNAL_API_ROUTES } from '@/common/constants'
 import React, { PropsWithChildren } from 'react'
 import { SWRConfig } from 'swr'
-import { PostsSWRConfigProps } from './types'
+import { PostsSWRConfigProps } from '../types'
 
 const { posts } = INTERNAL_API_ROUTES
 

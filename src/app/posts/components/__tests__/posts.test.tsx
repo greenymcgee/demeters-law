@@ -7,21 +7,21 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from '@testing-library/react'
-import { TestSWRConfig } from '../../../../jest.components'
+import { TestSWRConfig } from '../../../../../jest.components'
 import {
   AXIOS_ERROR,
   EXPIRED_POST_1,
   GET_POSTS_RESPONSE,
   GET_POSTS_RESPONSE_WITHOUT_POSTS,
-} from '../../../../fixtures'
-import { Posts } from '../posts'
-import { PostsDataFacade } from '../facades'
+} from '../../../../../fixtures'
+import { Posts } from '..'
+import { PostsDataFacade } from '../../facades'
 
 afterEach(() => {
   mockAxios.reset()
 })
 
-describe('<Posts /> Tests', () => {
+describe('<Posts /> tests', () => {
   it('should render the error', async () => {
     render(<Posts />, { wrapper: TestSWRConfig })
     act(() => {
