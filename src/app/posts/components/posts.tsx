@@ -8,8 +8,7 @@ import { PostsList } from './list'
 import { PostsLoader } from './loader'
 
 export function Posts(): JSX.Element {
-  // TODO: work with isValidating in PostsList
-  const { currentPosts, error, hasPosts, isLoading } = usePosts()
+  const { error, hasPosts, isLoading } = usePosts()
 
   if (error) return <PostsError />
 
@@ -17,5 +16,5 @@ export function Posts(): JSX.Element {
 
   if (!hasPosts) return <PostsEmpty />
 
-  return <PostsList currentPosts={currentPosts} />
+  return <PostsList />
 }
