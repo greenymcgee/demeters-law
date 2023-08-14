@@ -1,14 +1,16 @@
-import Link from 'next/link'
+import { DLLink } from '@/common/components'
 import React, { PropsWithChildren } from 'react'
 
 export default function PostsLayout({
   children,
 }: PropsWithChildren): JSX.Element {
   return (
-    <main>
-      <h1>Posts</h1>
+    <main className="container py-8">
+      <header>
+        <h1>Posts</h1>
+      </header>
       {children}
-      <Link href="/">Back to Home</Link>
+      <DLLink href="/">Back to Home</DLLink>
     </main>
   )
 }
