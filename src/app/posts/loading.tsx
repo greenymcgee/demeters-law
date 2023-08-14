@@ -1,5 +1,6 @@
 import React from 'react'
+import { PostsLoader } from './components/loader'
 
-export default function PostsLoader(): JSX.Element {
-  return <p data-testid="posts-loader">Loading Posts...</p>
+export default function PostsLoading(): JSX.Element {
+  return <PostsLoader />
 }

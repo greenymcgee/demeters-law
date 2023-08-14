@@ -9,7 +9,7 @@ import { EXPIRED_POST_1, GET_POSTS_RESPONSE } from '../../../../fixtures'
 import PostsPage from '../page'
 import { PostsDataFacade } from '../facades'
 
-describe('<PostsPage /> test', () => {
+describe('<PostsPage /> tests', () => {
   it('should render the posts', async () => {
     mockAxios.get.mockResolvedValue({ data: GET_POSTS_RESPONSE })
     const jsx = await PostsPage()
