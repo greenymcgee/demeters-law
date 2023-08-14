@@ -23,5 +23,3 @@ export interface UsePosts extends SWRResponse<GetPostsResponse, AxiosError> {
 export interface PostsSWRConfigProps {
   fallbackPosts: GetPostsResponse | undefined
 }
-
-export type PostsListProps = Pick<UsePosts, 'currentPosts'>

@@ -2,10 +2,11 @@
 
 import Image, { ImageLoaderProps } from 'next/image'
 import React from 'react'
-import { PostRecord, PostsListProps } from '../types'
+import { usePosts } from '../hooks'
+import { PostRecord } from '../types'
 
-function imageLoader({ src, width }: ImageLoaderProps): string {
-  return `https://picsum.photos/id/${src}/${width}`
+function imageLoader({ src }: ImageLoaderProps): string {
+  return `https://picsum.photos/id/${src}/300/225`
 }
 
 function renderPost(post: PostRecord) {
@@ -16,7 +17,7 @@ function renderPost(post: PostRecord) {
       </div>
       <Image
         alt={post.title}
-        height={200}
+        height={225}
         loader={imageLoader}
         priority
         src={post.imageId}
@@ -26,6 +27,13 @@ function renderPost(post: PostRecord) {
   )
 }
 
-export function PostsList({ currentPosts }: PostsListProps): JSX.Element {
-  return <ul data-testid="posts-list">{currentPosts.map(renderPost)}</ul>
+export function PostsList(): JSX.Element {
+  const { currentPosts, isValidating } = usePosts()
+
+  return (
+    <>
+      <ul data-testid="posts-list">{currentPosts.map(renderPost)}</ul>
+      {isValidating && <p>Fetching latest posts...</p>}
+    </>
+  )
 }
