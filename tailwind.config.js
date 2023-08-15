@@ -5,5 +5,9 @@ module.exports = {
     container: { center: true, padding: { DEFAULT: '1rem' } },
     extend: {},
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  plugins: [require('@tailwindcss/aspect-ratio')],
 }

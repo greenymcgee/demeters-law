@@ -1,11 +1,11 @@
+import { LINK_CLASS_NAMES } from '@/common/constants'
 import clsx from 'clsx'
 import Link from 'next/link'
 import React from 'react'
-import { DL_LINK_CLASS_NAMES } from './constants'
 import { DLLinkProps } from './types'
 
 /**
- * The "Demeter' Law" version of the Link component from Next.js.
+ * The demeters-law version of the Link component from Next.js.
  */
 export function DLLink({
   className,
@@ -15,7 +15,7 @@ export function DLLink({
 }: DLLinkProps): JSX.Element {
   return (
     <Link
-      className={clsx(className, DL_LINK_CLASS_NAMES[variant])}
+      className={clsx(className, LINK_CLASS_NAMES[variant])}
       href={href}
       {...options}
     />

@@ -6,10 +6,10 @@ export default function PostsLayout({
 }: PropsWithChildren): JSX.Element {
   return (
     <main className="container py-8">
-      <header>
+      <header className="mb-8">
         <h1>Posts</h1>
       </header>
-      {children}
+      <div className="mb-4">{children}</div>
       <DLLink href="/">Back to Home</DLLink>
     </main>
   )

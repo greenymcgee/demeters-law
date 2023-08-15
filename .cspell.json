@@ -1,4 +1,14 @@
 {
-  "ignorePaths": ["node_modules/**"],
-  "words": ["aren", "Quxx", "testid", "clsx"]
+  "ignorePaths": [
+    "node_modules/**"
+  ],
+  "words": [
+    "aren",
+    "clsx",
+    "demeters",
+    "greenymcgee",
+    "Quxx",
+    "tailwindcss",
+    "testid"
+  ]
 }

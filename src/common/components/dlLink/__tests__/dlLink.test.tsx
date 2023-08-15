@@ -1,7 +1,7 @@
 import React from 'react'
+import { LINK_CLASS_NAMES } from '@/common/constants'
 import { render, screen } from '@testing-library/react'
 import { DLLink } from '..'
-import { DL_LINK_CLASS_NAMES } from '../constants'
 
 describe('<DLLink />', () => {
   it('should render as the "primary" variant by default', () => {
@@ -12,7 +12,7 @@ describe('<DLLink />', () => {
     )
     const link = screen.getByText('Link')
     expect(link).toBeVisible()
-    expect(link).toHaveAttribute('class', `px-2 ${DL_LINK_CLASS_NAMES.primary}`)
+    expect(link).toHaveAttribute('class', `px-2 ${LINK_CLASS_NAMES.primary}`)
     expect(link).toHaveAttribute('href', '/')
   })
 
