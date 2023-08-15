@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body,
+  html {
+    @apply text-black;
+    font-size: 16px;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold leading-[125%];
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+  h5 {
+    @apply text-lg lg:text-xl;
+  }
+  h6 {
+    @apply lg:text-lg;
+  }
+
+  button,
+  input,
+  textarea {
+    @apply disabled:pointer-events-none;
+  }
+
+  input:invalid,
+  textarea:invalid {
+    @apply border-red-500;
+  }
+}
+
+@layer utilities {
+  .skeleton {
+    @apply pointer-events-none animate-pulse cursor-default select-none rounded-sm border-gray-500 bg-gray-500 bg-opacity-20 bg-clip-padding text-transparent shadow-none  !important;
+  }
+
+  .skeleton * {
+    @apply invisible;
+  }
+
+  .focus-disabled a,
+  .focus-disabled button,
+  .focus-disabled input,
+  .focus-disabled select,
+  .focus-disabled textarea {
+    @apply focus:outline-none;
+  }
+}

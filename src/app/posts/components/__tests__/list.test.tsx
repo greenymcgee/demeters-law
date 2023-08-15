@@ -32,7 +32,7 @@ describe('<PostsList /> tests', () => {
       expect(image).toBeVisible()
       expect(image).toHaveAttribute(
         'src',
-        `https://picsum.photos/id/${post.imageId}/300/225`,
+        `https://picsum.photos/id/${post.imageId}/600`,
       )
     })
     expect(
