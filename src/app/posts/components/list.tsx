@@ -13,9 +13,9 @@ function imageLoader({ src }: ImageLoaderProps): string {
 function renderPost(post: PostRecord) {
   return (
     <li className="rounded shadow-lg" key={post.id}>
-      <div className="aspect-w-4 aspect-h-3 relative">
+      <div className="aspect-h-3 aspect-w-4 relative bg-gray-300">
         <Image
-          alt={post.title}
+          alt={`${post.title} Background Image`}
           className="rounded-tl rounded-tr"
           fill
           loader={imageLoader}
