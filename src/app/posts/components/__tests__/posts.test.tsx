@@ -61,7 +61,9 @@ describe('<Posts /> tests', () => {
     expect(screen.queryByText(EXPIRED_POST_1.title)).not.toBeInTheDocument()
     new PostsDataFacade(GET_POSTS_RESPONSE).currentPosts.forEach((post) => {
       expect(screen.getByText(post.title)).toBeVisible()
-      expect(screen.getByAltText(post.title)).toBeVisible()
+      expect(
+        screen.getByAltText(`${post.title} Background Image`),
+      ).toBeVisible()
     })
   })
 })

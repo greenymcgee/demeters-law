@@ -27,7 +27,7 @@ describe('<PostsList /> tests', () => {
     await screen.findByText(CURRENT_POST_1.title)
     expect(screen.queryByText(EXPIRED_POST_1.title)).not.toBeInTheDocument()
     new PostsDataFacade(GET_POSTS_RESPONSE).currentPosts.forEach((post) => {
-      const image = screen.getByAltText(post.title)
+      const image = screen.getByAltText(`${post.title} Background Image`)
       expect(screen.getByText(post.title)).toBeVisible()
       expect(image).toBeVisible()
       expect(image).toHaveAttribute(
