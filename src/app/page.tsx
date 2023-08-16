@@ -11,9 +11,9 @@ export default function HomePage(): JSX.Element {
       <article className="mb-8">
         <p className="mb-2">
           This site exists purely as a playground for standing up object
-          oriented practices using{' '}
+          oriented practices using the{' '}
           <ExternalLink href="https://en.wikipedia.org/wiki/Law_of_Demeter">
-            The Law of Demeter
+            Law of Demeter
           </ExternalLink>{' '}
           within a{' '}
           <ExternalLink href={EXTERNAL_LINKS.nextJs}>Next.js</ExternalLink>{' '}
