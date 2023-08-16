@@ -20,6 +20,7 @@ on:
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - uses: actions/checkout@v3
 
