@@ -15,6 +15,7 @@ jobs:
   code-quality:
     name: Code Quality
     runs-on: ubuntu-latest
+    environment: Preview
 
     steps:
       - name: Checkout
