@@ -1,13 +1,15 @@
 /** @type {import('next').NextConfig} */
 
 const BUILD_TIME = new Date().toLocaleString('en-US', {
-  timeZone: 'America/Chicago',
+  dateStyle: 'full',
+  timeStyle: 'long',
+  timeZone: 'America/Denver',
 })
 
 const nextConfig = {
   experimental: { typedRoutes: true },
 
-  env: { BUILD_TIME },
+  env: { NEXT_PUBLIC_BUILD_TIME: BUILD_TIME },
 
   output: 'standalone',
 }
