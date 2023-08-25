@@ -9,8 +9,6 @@ services:
     volumes:
       - .:/app
     command: npm run dev
-    environment:
-      NODE_ENV: development
 
 volumes:
   node_modules:

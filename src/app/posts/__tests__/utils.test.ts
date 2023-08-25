@@ -16,13 +16,11 @@ describe('posts utils', () => {
       expect(result).toEqual(GET_POSTS_RESPONSE)
     })
 
-    it('should log the error', async () => {
+    it('should return undefined when an error is caught', async () => {
       mockAxios.get.mockRejectedValue(AXIOS_ERROR)
       const result = await fetchFallbackPosts()
       expect(mockAxios.get).toHaveBeenCalledWith(INTERNAL_API_ROUTES.posts)
       expect(result).toBeUndefined()
-      // TODO: test logger here
-      // expect(serverLogger.error).toHaveBeenCalledWith('blah')
     })
   })
 })

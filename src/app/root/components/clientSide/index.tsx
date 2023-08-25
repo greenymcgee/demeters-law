@@ -1,17 +1,19 @@
 'use client'
 
-/* eslint-disable no-console */
-
 import { BUILD_TIME, COMMIT_SHA } from '@/common/constants'
+import { useDLLogger } from '@/log'
 import React, { useEffect } from 'react'
 
 export function ClientSide(): JSX.Element {
+  const log = useDLLogger()
+
   useEffect(() => {
-    // TODO: get logger
-    console.info("Demeter's Law loaded")
-    console.info(`Build time: ${BUILD_TIME}`)
-    console.info(`Commit sha: ${COMMIT_SHA}`)
-  }, [])
+    log.info("Demeter's Law loaded", {
+      BUILD_TIME,
+      COMMIT_SHA,
+      NODE_ENV: process.env.NODE_ENV,
+    })
+  }, [log])
 
   return <>{}</>
 }

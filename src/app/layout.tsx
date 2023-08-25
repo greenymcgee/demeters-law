@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react'
+import { AxiomWebVitals } from 'next-axiom'
 import '../styles/global.css'
 import { ClientSide } from './root/components'
 
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body>
+        <AxiomWebVitals />
         <ClientSide />
         {children}
       </body>

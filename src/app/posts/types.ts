@@ -21,5 +21,5 @@ export interface UsePosts extends SWRResponse<GetPostsResponse, AxiosError> {
 }
 
 export interface PostsSWRConfigProps {
-  fallbackPosts: GetPostsResponse | undefined
+  fallbackPosts: GetPostsResponse | void
 }
