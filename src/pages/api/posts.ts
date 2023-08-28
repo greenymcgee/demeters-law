@@ -8,10 +8,10 @@ export default function controller(
   response: NextApiResponse,
 ) {
   if (request.method === 'GET') {
-    logger.info('GET /api/posts 200')
+    logger.info('[GET] /posts: Success')
     return response.status(200).json(snakeCaseKeys(GET_POSTS_RESPONSE))
   }
 
-  logger.error('GET /api/posts 405')
+  logger.error('[GET] /posts: Method not allowed')
   return response.status(405).json({ message: 'Method not allowed' })
 }

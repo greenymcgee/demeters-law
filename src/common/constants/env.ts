@@ -5,3 +5,4 @@ export const BUILD_TIME = process.env.NEXT_PUBLIC_BUILD_TIME
 export const LOGFLARE_API_KEY = process.env.NEXT_PUBLIC_LOGFLARE_API_KEY
 export const LOGFLARE_SOURCE_TOKEN =
   process.env.NEXT_PUBLIC_LOGFLARE_SOURCE_TOKEN
+export const VERCEL_ENV = process.env.NEXT_PUBLIC_VERCEL_ENV
