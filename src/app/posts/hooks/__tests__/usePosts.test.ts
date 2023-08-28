@@ -15,6 +15,7 @@ afterEach(() => {
 describe('usePosts Tests', () => {
   it('should return the currentPosts when data is present', async () => {
     const { result } = renderHook(() => usePosts(), { wrapper: TestSWRConfig })
+    expect(logger.info).toHaveBeenCalledWith('Fetching latest posts')
     expect(result.current.currentPosts).toEqual([])
     expect(result.current.isLoading).toEqual(true)
     act(() => {
@@ -32,6 +33,7 @@ describe('usePosts Tests', () => {
 
   it('should return the errorMessage upon failure', async () => {
     const { result } = renderHook(() => usePosts(), { wrapper: TestSWRConfig })
+    expect(logger.info).toHaveBeenCalledWith('Fetching latest posts')
     act(() => {
       const request = mockAxios.getReqByMatchUrl(/posts/)
       mockAxios.mockError(AXIOS_ERROR, request)

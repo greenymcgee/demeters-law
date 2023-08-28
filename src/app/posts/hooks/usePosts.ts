@@ -13,14 +13,19 @@ function handlePostsError(error: unknown) {
   logger.error({ error }, 'Encountered error within usePosts')
 }
 
-async function fetchPosts(pathname: string): Promise<GetPostsResponse> {
+async function fetchPosts(pathname: string) {
+  logger.info('Fetching latest posts')
   return internal.get(pathname).then(({ data }) => data)
 }
 
 export function usePosts(): UsePosts {
-  const query = useSWR(INTERNAL_API_ROUTES.posts, fetchPosts, {
-    onError: handlePostsError,
-  })
+  const query = useSWR<GetPostsResponse>(
+    INTERNAL_API_ROUTES.posts,
+    fetchPosts,
+    {
+      onError: handlePostsError,
+    },
+  )
 
   const { currentPosts, hasPosts } = useMemo(
     () => new PostsDataFacade(query.data),
