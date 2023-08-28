@@ -16,7 +16,10 @@ export const logger = pino(
   {
     browser: { transmit: { level: 'info', send } },
     level: 'debug',
-    base: { COMMIT_SHA, NODE_ENV },
+    base: {
+      COMMIT_SHA: COMMIT_SHA ?? 'COMMIT_SHA not found',
+      NODE_ENV: NODE_ENV ?? 'NODE_ENV not found',
+    },
   },
   stream,
 )
