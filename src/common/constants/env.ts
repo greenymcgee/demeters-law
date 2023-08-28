@@ -1,3 +1,6 @@
 export const INTERNAL_API_HOST = process.env.NEXT_PUBLIC_INTERNAL_API_HOST
 export const COMMIT_SHA = process.env.NEXT_PUBLIC_COMMIT_SHA
 export const BUILD_TIME = process.env.NEXT_PUBLIC_BUILD_TIME
+export const LOGFLARE_API_KEY = process.env.NEXT_PUBLIC_LOGFLARE_API_KEY
+export const LOGFLARE_SOURCE_TOKEN =
+  process.env.NEXT_PUBLIC_LOGFLARE_SOURCE_TOKEN

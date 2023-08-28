@@ -2,6 +2,7 @@ import { INTERNAL_API_ROUTES } from '@/common/constants'
 import mockAxios from 'jest-mock-axios'
 import { act, renderHook, waitFor } from '@testing-library/react'
 import { AxiosErrorFacade } from '@/common/facades'
+import { logger } from '@/log'
 import { AXIOS_ERROR, GET_POSTS_RESPONSE } from '../../../../../fixtures'
 import { TestSWRConfig } from '../../../../../jest.components'
 import { usePosts } from '..'
@@ -36,6 +37,10 @@ describe('usePosts Tests', () => {
       mockAxios.mockError(AXIOS_ERROR, request)
     })
     await waitFor(() => expect(result.current.isLoading).toEqual(false))
+    expect(logger.error).toHaveBeenCalledWith(
+      { error: AXIOS_ERROR },
+      'Encountered error within usePosts',
+    )
     expect(result.current.data).toBeUndefined()
     expect(result.current.error).toEqual(AXIOS_ERROR)
     expect(result.current.currentPosts).toEqual([])

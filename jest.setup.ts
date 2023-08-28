@@ -20,4 +20,20 @@ jest.mock('react-dom', () => ({
   preload: jest.fn(),
 }))
 
-/* eslint-enable import/no-extraneous-dependencies */
+const loggerChild = {
+  debug: jest.fn(),
+  error: jest.fn(),
+  info: jest.fn(),
+  warn: jest.fn(),
+}
+
+/**
+ * This mocks our logger util so that we can just import the logger in any test
+ * and expect any of the methods toHaveBeenCalled.
+ */
+jest.mock('./src/log/logger.ts', () => ({
+  logger: {
+    child: jest.fn(() => loggerChild),
+    ...loggerChild,
+  },
+}))
