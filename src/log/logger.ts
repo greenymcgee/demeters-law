@@ -1,4 +1,9 @@
-import { LOGFLARE_API_KEY, LOGFLARE_SOURCE_TOKEN } from '@/common/constants'
+import {
+  COMMIT_SHA,
+  LOGFLARE_API_KEY,
+  LOGFLARE_SOURCE_TOKEN,
+  NODE_ENV,
+} from '@/common/constants'
 import pino from 'pino'
 import { logflarePinoVercel } from 'pino-logflare'
 
@@ -11,10 +16,7 @@ export const logger = pino(
   {
     browser: { transmit: { level: 'info', send } },
     level: 'debug',
-    base: {
-      VERCEL_ENV: process.env.VERCEL_ENV,
-      COMMIT_SHA: process.env.VERCEL_GITHUB_COMMIT_SHA,
-    },
+    base: { COMMIT_SHA, NODE_ENV },
   },
   stream,
 )
