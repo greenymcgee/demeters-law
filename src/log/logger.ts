@@ -2,6 +2,7 @@ import {
   COMMIT_SHA,
   LOGFLARE_API_KEY,
   LOGFLARE_SOURCE_TOKEN,
+  NODE_ENV,
   VERCEL_ENV,
 } from '@/common/constants'
 import pino from 'pino'
@@ -16,7 +17,7 @@ export const logger = pino(
   {
     base: {
       COMMIT_SHA: COMMIT_SHA ?? 'COMMIT_SHA not found',
-      NODE_ENV: process.env.NOD_ENV ?? 'NODE_ENV not found',
+      NODE_ENV: NODE_ENV ?? 'NODE_ENV not found',
       VERCEL_ENV: VERCEL_ENV ?? 'VERCEL_ENV not found',
     },
     browser: { transmit: { level: 'info', send } },
