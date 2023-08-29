@@ -14,11 +14,15 @@ const { stream, send } = logflarePinoVercel({
   sourceToken: LOGFLARE_SOURCE_TOKEN as string,
 })
 
+const BASE = { BUILD_TIME, COMMIT_SHA, NODE_ENV, VERCEL_ENV }
+
 export const logger = pino(
   {
-    base: { BUILD_TIME, COMMIT_SHA, NODE_ENV, VERCEL_ENV },
+    base: BASE,
     browser: { transmit: { level: 'info', send } },
     level: 'debug',
   },
   stream,
 )
+
+export const clientSideLogger = logger.child(BASE)
