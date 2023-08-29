@@ -1,4 +1,5 @@
 import {
+  BUILD_TIME,
   COMMIT_SHA,
   LOGFLARE_API_KEY,
   LOGFLARE_SOURCE_TOKEN,
@@ -15,11 +16,7 @@ const { stream, send } = logflarePinoVercel({
 
 export const logger = pino(
   {
-    base: {
-      COMMIT_SHA: COMMIT_SHA ?? 'COMMIT_SHA not found',
-      NODE_ENV: NODE_ENV ?? 'NODE_ENV not found',
-      VERCEL_ENV: VERCEL_ENV ?? 'VERCEL_ENV not found',
-    },
+    base: { BUILD_TIME, COMMIT_SHA, NODE_ENV, VERCEL_ENV },
     browser: { transmit: { level: 'info', send } },
     level: 'debug',
   },
