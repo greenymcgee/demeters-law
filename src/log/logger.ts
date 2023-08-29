@@ -16,7 +16,7 @@ const { stream, send } = logflarePinoVercel({
 
 const BASE = { BUILD_TIME, COMMIT_SHA, NODE_ENV, VERCEL_ENV }
 
-export const logger = pino(
+const baseLogger = pino(
   {
     base: BASE,
     browser: { transmit: { level: 'info', send } },
@@ -25,4 +25,7 @@ export const logger = pino(
   stream,
 )
 
-export const clientSideLogger = logger.child(BASE)
+const clientSideLogger = baseLogger.child(BASE)
+
+export const logger =
+  typeof window === 'undefined' ? baseLogger : clientSideLogger

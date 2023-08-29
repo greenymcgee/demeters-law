@@ -14,7 +14,7 @@ function handlePostsError(error: unknown) {
 }
 
 async function fetchPosts(pathname: string) {
-  logger.info({}, 'Fetching latest posts')
+  logger.info('Fetching latest posts')
   return internal.get(pathname).then(({ data }) => data)
 }
 
