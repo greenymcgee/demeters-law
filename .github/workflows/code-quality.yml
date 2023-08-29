@@ -6,7 +6,9 @@ on:
       - main
 env:
   NEXT_PUBLIC_INTERNAL_API_HOST: ${{ vars.NEXT_PUBLIC_INTERNAL_API_HOST }}
-  NEXT_PUBLIC_COMMIT_SHA: ${{ github.event.pull_request_head.sha }}
+  NEXT_PUBLIC_COMMIT_SHA: ${{ github.sha }}
+  NEXT_PUBLIC_LOGFLARE_API_KEY: ${{ secrets.NEXT_PUBLIC_LOGFLARE_API_KEY }}
+  NEXT_PUBLIC_LOGFLARE_SOURCE_TOKEN: ${{ secrets.NEXT_PUBLIC_LOGFLARE_SOURCE_TOKEN }}
 
 defaults:
   run:
